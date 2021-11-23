@@ -1,0 +1,65 @@
+FORMAT: 1A
+
+# Basic Ecommerce API
+
+# Group Products
+
+Resources that interact with api products
+
+## Products Collections [/products]
+
+### List all products [GET]
+
++ Response 200 (application/json)
+       
+        [ 
+          {
+            title : "string",
+            price : "number",
+            available_quantity : "number",
+            condition : "string",
+            description : "string",
+            warranty : "string",
+            ts_create : "date",
+            ts_update : "date",
+            enable : "boolean"
+          }
+        ]
+
++ Response 500 (application/json)
+
+        [
+         {
+            message : "error"
+         }
+        ]    
+
+
+### Create a new Product [POST]
+
++ title (string) - Cell phone
++ price (number) - 2000
++ available_quantity (number) - 10
++ condition (string) - New  
++ description (string) - this is the best cell phone  
+
+
++ Request  (application/json)
+        
+         {
+            title : "Cell Phone",
+            price : 2000,
+            available_quantity : 10,
+            condition : "New",
+            description : "The best cell phone in the world",
+            warranty : "One month", 
+         }
+        
+
++ Response 201 (application/json)
+
+        [
+            {
+                message : "product created succefull"
+            }
+        ]
